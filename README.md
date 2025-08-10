@@ -20,14 +20,14 @@ O objetivo é permitir ao usuário **adicionar, remover, listar, verificar e sub
 
 O projeto está organizado da seguinte forma:
 
-src/
+'''src/
 ├── Aplication/
 │ └── Program.java 
 │
 ├── Entity/
 │ ├── Tarefa.java 
 │ └── GerenciadorDeTarefas.java 
-
+'''
 
 ---
 
