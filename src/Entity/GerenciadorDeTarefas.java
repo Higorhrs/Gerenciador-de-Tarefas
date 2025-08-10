@@ -14,7 +14,7 @@ public class GerenciadorDeTarefas {
 	
 	public void adicionarTarefa(Tarefa tarefa) {
 		if (!tarefaExiste(tarefa.getNome())) {
-            tarefa.add(tarefa);
+            tarefas.add(tarefa);
             System.out.println("Tarefa adicionada: " + tarefa.getNome());
         } else {
             System.out.println("Tarefa com esse nome já existe.");
@@ -53,7 +53,7 @@ public class GerenciadorDeTarefas {
 	        }
 	        return false;
 	}
-	public void substituirTarefa(String nomeAntigo, String novaTarefa) {
+	public void substituirTarefa(String nomeAntigo, Tarefa novaTarefa) {
 		for (int i = 0; i < tarefas.size(); i++) {
             if (tarefas.get(i).getNome().equalsIgnoreCase(nomeAntigo)) {
                 tarefas.set(i, novaTarefa);

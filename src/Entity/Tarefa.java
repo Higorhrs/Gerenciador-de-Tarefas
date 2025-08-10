@@ -10,7 +10,6 @@ public class Tarefa {
 	
 
 	public Tarefa(int id, String nome, String descricao, String status) {
-		super();
 		this.id = id;
 		this.nome = nome;
 		this.descricao = descricao;
@@ -72,16 +71,22 @@ public class Tarefa {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
-
+	
 
 
 	public String toString() {
-		return "código: " + id 
-				+ "Nome: " + nome 
-				+ "Descrição: " + descricao 
-				+ "Status: " + status;
+		return "\n-----------------------------------------------------------------------------------------------------\nCódigo da tarefa:" + id 
+				+ " Nome: " + nome 
+				+ " Descrição: " + descricao 
+				+ " Status: " + status 
+				+ "\n-----------------------------------------------------------------------------------------------------\n";
 	}
+
+
+
+
+		
+	
 }
 	
 	
