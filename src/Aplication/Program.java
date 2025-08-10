@@ -1,9 +1,16 @@
 package Aplication;
 
+import java.util.Scanner;
+import Entity.GerenciadorDeTarefas;
+
 public class Program {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		GerenciadorDeTarefas gerenciador = new GerenciadorDeTarefas();
+		
+		sc.close();
 
 	}
 

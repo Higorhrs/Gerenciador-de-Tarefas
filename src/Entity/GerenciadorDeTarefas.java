@@ -1,47 +1,67 @@
 package Entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class GerenciadorDeTarefas {
 	
-	private int id;
-	private String nome;
-	private String descricao;
-	private String status;
+	private List<Tarefa> tarefas;
 	
-	public GerenciadorDeTarefas(int id, String nome, String descricao, String status) {
-		this.id = id;
-		this.nome = nome;
-		this.descricao = descricao;
-		this.status = status;
+	public GerenciadorDeTarefas() {
+		tarefas = new ArrayList<>();
 	}
 	
-	public int getId() {
-		return id;
+	public void adicionarTarefa(Tarefa tarefa) {
+		if (!tarefaExiste(tarefa.getNome())) {
+            tarefa.add(tarefa);
+            System.out.println("Tarefa adicionada: " + tarefa.getNome());
+        } else {
+            System.out.println("Tarefa com esse nome já existe.");
+        }
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void removerTarefa(String nome) {
+		Tarefa tarefaParaRemover = null;
+        for (Tarefa t : tarefas) {
+            if (t.getNome().equalsIgnoreCase(nome)) {
+                tarefaParaRemover = t;
+                break;
+            }
+        }
+        if (tarefaParaRemover != null) {
+            tarefas.remove(tarefaParaRemover);
+            System.out.println("Tarefa removida: " + nome);
+        } else {
+            System.out.println("Tarefa não encontrada: " + nome);
+        }
 	}
-	public String getNome() {
-		return nome;
+	public void listarTarefas() {
+		if (tarefas.isEmpty()) {
+            System.out.println("Nenhuma tarefa cadastrada.");
+            return;
+        }
+        System.out.println("Lista de tarefas:");
+        for (Tarefa t : tarefas) {
+            System.out.println(t);
+        }
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public boolean tarefaExiste(String nome) {
+		  for (Tarefa t : tarefas) {
+	            if (t.getNome().equalsIgnoreCase(nome)) {
+	                return true;
+	            }
+	        }
+	        return false;
 	}
-	public String getDescricao() {
-		return descricao;
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
+	public void substituirTarefa(String nomeAntigo, String novaTarefa) {
+		for (int i = 0; i < tarefas.size(); i++) {
+            if (tarefas.get(i).getNome().equalsIgnoreCase(nomeAntigo)) {
+                tarefas.set(i, novaTarefa);
+                System.out.println("Tarefa substituída: " + nomeAntigo + " por " + novaTarefa.getNome());
+                return;
+            }
+        }
+        System.out.println("Tarefa não encontrada: " + nomeAntigo);
+    }
 	
-	
-	
-	
-	
-
 }
