@@ -19,7 +19,7 @@ O objetivo é permitir ao usuário **adicionar, remover, listar, verificar e sub
 ## 📂 Estrutura do Projeto
 
 O projeto está organizado da seguinte forma:
-
+```bash
 src
 ├── Aplication
 │  └── Program.java
@@ -29,7 +29,7 @@ src
 │  └── GerenciadorDeTarefas.java 
 │      
 └── README.md
-
+```
 ---
 
 ## 🛠️ Tecnologias Utilizadas
